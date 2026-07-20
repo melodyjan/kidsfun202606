@@ -234,3 +234,57 @@ footer a:hover {
     box-shadow: 10px 10px 0 var(--sky);
   }
 }
+
+/* 引入外部可愛風圓潤字體 */
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+a.btnstyle {
+  /* 基礎設定 */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  
+  /* 顏色與圓角（改為可愛糖果藍） */
+  color: 	#000;
+  background-color: #4fc3f7;       /* 溫和、亮麗的糖果粉藍 */
+  border: none;
+  border-radius: 25px;             /* 完美半圓形比例 */
+  
+  /* 字體與留白（維持縮小版尺寸） */
+  font-family: 'Kosugi+Maru', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 8px 18px;               /* 輕巧小按鈕尺寸 */
+  
+  /* 立體感深藍陰影 */
+  box-shadow: 0 3px 0px #0288d1,   /* 搭配糖果藍的深寶藍陰影 */
+              0 4px 8px rgba(79, 195, 247, 0.3); 
+  
+  /* 轉場動畫 */
+  transition: all 0.2s ease-out;
+}
+
+/* 購物車圖示微調 */
+a.btnstyle .icon {
+  margin-right: 6px;
+  font-size: 15px;
+}
+
+/* 滑鼠懸停效果 */
+a.btnstyle:hover {
+  background-color: #81d4fa;       /* 懸停時，變成更輕盈的淺天藍 */
+  transform: translateY(-2px);     /* 向上微幅彈起 */
+  box-shadow: 0 5px 0px #0288d1,   /* 陰影隨之拉長 */
+              0 8px 12px rgba(79, 195, 247, 0.4); 
+}
+
+/* 滑鼠點擊效果 */
+a.btnstyle:active {
+  transform: translateY(2px);      /* 按壓下陷 */
+  box-shadow: 0 1px 0px #0288d1,   /* 陰影幾乎貼平 */
+              0 2px 5px rgba(79, 195, 247, 0.2);
+  transition: all 0.1s ease-out;
+} 

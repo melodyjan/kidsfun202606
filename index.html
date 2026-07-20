@@ -129,7 +129,15 @@
                 <span class="course-icon">構</span>
                 <h3 class="h5 fw-bold">建構與邏輯</h3>
                 <p class="card-text">積木、分類、序列與空間任務，培養觀察、推理與問題解決能力。</p>
-              </div>
+
+                <!-- 🛒 新增的購物車按鈕 -->
+                <div class="mt-3 text-center">
+                <a href="#" type="button" class="btnstyle" data-item-id="COURSE_01" data-item-name="建構與邏輯">
+                <span class="icon">🛒</span> 買下來！
+                </a>
+                </div>
+
+                </div>
             </article>
           </div>
           <div class="col-md-6 col-xl-3">
@@ -139,9 +147,17 @@
                 <span class="course-icon">美</span>
                 <h3 class="h5 fw-bold">美感創作</h3>
                 <p class="card-text">運用色彩、材質與故事創作，引導孩子練習感受、選擇與表達。</p>
-              </div>
+
+                <!-- 🛒 新增的購物車按鈕 -->
+                <div class="mt-3 text-center">
+                <a href="#" type="button" class="btnstyle" data-item-id="COURSE_02" data-item-name="美感創作">
+                <span class="icon">🛒</span> 買下來！
+                </a>
+                </div>
+
+               </div>
             </article>
-          </div>
+              </div>
           <div class="col-md-6 col-xl-3">
             <article class="card course-card">
               <img src="https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="幼兒進行律動與團體活動">
@@ -149,9 +165,17 @@
                 <span class="course-icon">律</span>
                 <h3 class="h5 fw-bold">音樂律動</h3>
                 <p class="card-text">節奏、歌謠、肢體遊戲與團體互動，建立身體協調與社交參與。</p>
+
+                <!-- 🛒 新增的購物車按鈕 -->
+                <div class="mt-3 text-center">
+                <a href="#" type="button" class="btnstyle" data-item-id="COURSE_03" data-item-name="音樂律動">
+                <span class="icon">🛒</span> 買下來！
+                </a>
+                </div>
+
               </div>
-            </article>
-          </div>
+           </article>
+              </div>
           <div class="col-md-6 col-xl-3">
             <article class="card course-card">
               <img src="https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="孩子使用感官材料探索觸覺">
@@ -159,6 +183,14 @@
                 <span class="course-icon">感</span>
                 <h3 class="h5 fw-bold">感官探索</h3>
                 <p class="card-text">水、沙、自然材料與觸覺活動，支持專注力、情緒調節與感覺統合。</p>
+
+                <!-- 🛒 新增的購物車按鈕 -->
+                <div class="mt-3 text-center">
+                <a href="#" type="button" class="btnstyle" data-item-id="COURSE_04" data-item-name="感官探索">
+                <span class="icon">🛒</span> 買下來！
+                </a>
+                </div>
+
               </div>
             </article>
           </div>
@@ -173,10 +205,10 @@
         <div class="col-lg-5">
           <h2 class="h4 fw-bold mb-3">小樹苗幼兒多元探索</h2>
           <p class="mb-4">以溫暖陪伴與專業課程，讓每個孩子在遊戲裡被看見，也在探索裡慢慢長大。</p>
-          <a class="social-link" href="#" aria-label="Instagram">IG</a>
-          <a class="social-link" href="#" aria-label="Facebook">FB</a>
-          <a class="social-link" href="#" aria-label="YouTube">YT</a>
-          <a class="social-link" href="#" aria-label="LINE">LINE</a>
+          <a class="social-link" href="https://www.facebook.com/drakelin2019/" target="_blank" rel="noopener noreferrer"" aria-label="Instagram">IG</a>
+          <a class="social-link" href="https://www.facebook.com/drakelin2019/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">FB</a>
+          <a class="social-link" href="https://www.youtube.com/@%E9%98%BF%E4%B8%80%E8%80%81%E5%B8%AB%E5%B0%8F%E6%95%99%E5%AE%A4"  target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
+          <a class="social-link" href="https://www.facebook.com/drakelin2019/" target="_blank" rel="noopener noreferrer"" aria-label="LINE">LINE</a>
         </div>
         <div class="col-lg-4">
           <h3 class="h5 fw-bold mb-3">公司資訊</h3>
@@ -205,5 +237,42 @@
   </a>
 
   <script src="js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // 抓取頁面上所有購物車按鈕
+  var cartButtons = document.querySelectorAll(".btnstyle");
+
+  cartButtons.forEach(function(btn) {
+    btn.addEventListener("click", function(event) {
+      event.preventDefault(); 
+
+      // 取得該按鈕上設定的課程資訊
+      var itemId = this.getAttribute("data-item-id") || "COURSE_01";
+      var itemName = this.getAttribute("data-item-name") || "小樹苗課程";
+
+      // 1. 發送 GA4 加入購物車事件 (add_to_cart)
+      if (typeof gtag === "function") {
+        gtag("event", "add_to_cart", {
+          currency: "TWD",
+          value: 1000, // 課程單價，可依需求調整
+          items: [
+            {
+              item_id: itemId,
+              item_name: itemName,
+              item_category: "幼兒課程",
+              price: 1000,
+              quantity: 1
+            }
+          ]
+        });
+        console.log("GA4 add_to_cart 已發送：", itemName);
+      }
+
+      // 2. 原本的提示視窗 (可保留也可移除)
+      alert("恭喜！這個超有趣的  " + itemName + "  課程已經成功被你捕捉囉！🎉🎉");
+    }, false);
+  });
+</script>
+
 </body>
 </html>
