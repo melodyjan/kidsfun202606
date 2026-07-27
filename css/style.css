@@ -52,6 +52,20 @@ body {
   margin-top: 74px;
 }
 
+.page-hero {
+  margin-top: 74px;
+  padding: 88px 0 72px;
+  background: linear-gradient(120deg, rgba(232, 246, 248, .95), rgba(255, 248, 237, .92));
+}
+
+.page-hero-image {
+  width: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 18px 18px 0 rgba(246, 189, 96, .35);
+}
+
 .carousel-item {
   min-height: 520px;
   background: #daeef1;
@@ -209,6 +223,11 @@ footer a:hover {
     margin-top: 66px;
   }
 
+  .page-hero {
+    margin-top: 66px;
+    padding: 64px 0 52px;
+  }
+
   .carousel-item,
   .carousel-item img {
     height: 430px;
@@ -287,4 +306,4 @@ a.btnstyle:active {
   box-shadow: 0 1px 0px #0288d1,   /* 陰影幾乎貼平 */
               0 2px 5px rgba(79, 195, 247, 0.2);
   transition: all 0.1s ease-out;
-} 
+}
