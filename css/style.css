@@ -182,7 +182,7 @@ footer {
   color: #f8fffb;
   background:
     linear-gradient(90deg, rgba(31, 62, 52, .9), rgba(49, 102, 85, .74)),
-    url("https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=1800&q=80") center/cover;
+    url("https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1800&q=80") center/cover;
 }
 
 footer a {
@@ -306,4 +306,23 @@ a.btnstyle:active {
   box-shadow: 0 1px 0px #0288d1,   /* 陰影幾乎貼平 */
               0 2px 5px rgba(79, 195, 247, 0.2);
   transition: all 0.1s ease-out;
+}
+/* 客製化 LINE 按鈕：圓角軟調風格，完美融入網頁綠色系 */
+.btn-line-custom {
+  background-color: #06c755;
+  color: #ffffff;
+  border-radius: 50rem; /* 膠囊圓角，與下方 feature-pill 視覺呼應 */
+  padding: 0.35rem 0.9rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(6, 199, 85, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-line-custom:hover {
+  background-color: #05b34c;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(6, 199, 85, 0.3);
 }
